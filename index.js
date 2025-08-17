@@ -13,3 +13,11 @@ export function sumTo(n) {
 }
 // the function run to n excluded and does not count
 //if  n  negative  is not run
+
+export function maxOrNull(arr) {
+  let max = arr[0];
+  for (const x of arr) if (x > max) max = x;
+  return arr.length ? max : null;
+}
+
+//the max befin with the 0 in case of only negative number in arr its not work
