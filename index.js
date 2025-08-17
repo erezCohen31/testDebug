@@ -36,15 +36,6 @@ export function findObjectByValue(objArr, value) {
   return "not found";
 }
 
-//with foreach return not work we need to change with for or for of
+//with foreach return not work, we need to change with for or for of
 //in the test we need to use deepstrictequal because an object is not primitive
 // and in this case strictequal verify by reference and depp byvalue
-
-function fetchData() {
-  return Promise.resolve({ count: 2 });
-}
-fetchData()
-  .then((d) => {
-    d.count += 1;
-  })
-  .then((d) => d.count);
