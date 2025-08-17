@@ -6,4 +6,3 @@ export function sumTo(n) {
   return s;
 }
 // the function run to n excluded and does not count
-console.log(sumTo(5));
