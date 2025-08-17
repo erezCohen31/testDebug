@@ -53,5 +53,16 @@ export function addCount(params) {
 }
 //the first then not return d
 
-const result = await addCount();
-console.log(result);
+export const calc = {
+  taxRate: 0.2,
+  calcFN: function (salary) {
+    return salary * this.taxRate;
+  },
+  calcSalary(salaryList) {
+    console.log(`sal list`, salaryList);
+    return salaryList.map((salary) => this.calcFN(salary));
+  },
+};
+
+//taxrate is undefined calcFN not knows taxrate but with the anonymous function he guard the lexical and knows him
+console.log(calc.calcSalary([0]));
