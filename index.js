@@ -39,3 +39,19 @@ export function findObjectByValue(objArr, value) {
 //with foreach return not work, we need to change with for or for of
 //in the test we need to use deepstrictequal because an object is not primitive
 // and in this case strictequal verify by reference and depp byvalue
+
+export function fetchData() {
+  return Promise.resolve({ count: 2 });
+}
+export function addCount(params) {
+  return fetchData()
+    .then((d) => {
+      d.count += 1;
+      return d;
+    })
+    .then((d) => d.count);
+}
+//the first then not return d
+
+const result = await addCount();
+console.log(result);
